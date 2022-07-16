@@ -6,6 +6,8 @@ const geocode=require('./utils/geocode')
 
 const app=express()
 
+const port=process.env.PORT || 3000
+
 const publicDirectPath=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname, '../templates/views')
 const partailsPath=path.join(__dirname,'../templates/partials')
@@ -80,6 +82,6 @@ app.get('*', (req,res)=>{
         errorMessage: "Page not found."
     })
 })
-app.listen(3000, ()=> {
-    console.log("Server is up on port 3000.")
+app.listen(port, ()=> {
+    console.log("Server is up on port "+port)
 })
